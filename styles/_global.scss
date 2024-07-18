@@ -7,13 +7,29 @@
 	-webkit-text-fill-color: transparent;
 }
 
+@mixin bg-radial-gradient {
+	background: #3a3456;
+	background: radial-gradient(circle, #3a3456 15%, #211e2e 100%);
+}
+
 * {
 	box-sizing: border-box;
 }
 
 body {
 	background-color: #302c42;
+	padding: 0;
+	margin: 0;
 	font-family: 'Montserrat', sans-serif;
+}
+
+.content {
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+	padding: 10px;
+	max-width: 1200px;
+	margin: 0 auto;
 }
 
 a,
@@ -27,10 +43,15 @@ h3 {
 }
 
 .purple-button {
-	color: black;
+	color: #343045;
 	background: linear-gradient(to right, #8176af, #c0b7e8);
 	border: none;
 	border-radius: 40px;
+	cursor: pointer;
+}
+
+.purple-button:hover {
+	color: white;
 }
 
 .transparent-button {
@@ -38,4 +59,10 @@ h3 {
 	color: white;
 	background-color: transparent;
 	border-radius: 40px;
+	cursor: pointer;
+}
+
+.transparent-button:hover {
+	border: 2px solid #c0b7e8;
+	// color: #c0b7e8;
 }

@@ -5,7 +5,18 @@
 
 body {
   background-color: #302c42;
+  padding: 0;
+  margin: 0;
   font-family: "Montserrat", sans-serif;
+}
+
+.content {
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  padding: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 a,
@@ -19,10 +30,15 @@ h3 {
 }
 
 .purple-button {
-  color: black;
+  color: #343045;
   background: linear-gradient(to right, #8176af, #c0b7e8);
   border: none;
   border-radius: 40px;
+  cursor: pointer;
+}
+
+.purple-button:hover {
+  color: white;
 }
 
 .transparent-button {
@@ -30,6 +46,11 @@ h3 {
   color: white;
   background-color: transparent;
   border-radius: 40px;
+  cursor: pointer;
+}
+
+.transparent-button:hover {
+  border: 2px solid #c0b7e8;
 }
 
 .header {
@@ -40,7 +61,7 @@ h3 {
 }
 .header__logo {
   display: block;
-  width: 150px;
+  width: clamp(150px, 8.693rem + 3.41vw, 180px);
   height: auto;
 }
 .header__burger-menu {
@@ -82,16 +103,17 @@ h3 {
   display: block;
   position: fixed;
   visibility: hidden;
-  top: 120px;
+  top: 130px;
   left: -100%;
   width: 100%;
   /* height: 100%; */
   margin: 0;
   padding: 20px;
   list-style: none;
-  background-color: rgba(31, 31, 43, 0.9);
+  background-color: rgba(31, 31, 43, 0.95);
   box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
   transition-duration: 0.25s;
+  z-index: 10;
 }
 .header__nav a:hover {
   background-color: #8176af;
@@ -104,15 +126,23 @@ h3 {
 }
 .header__buttons a {
   cursor: pointer;
+  border-radius: 40px;
 }
 .header__menu-item {
   display: block;
   padding: 12px 24px;
   color: white;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 600;
   text-decoration: none;
   transition-duration: 0.25s;
+  border-radius: 10px;
+}
+.header .purple-button {
+  color: #343045;
+}
+.header .purple-button:hover {
+  color: white;
 }
 
 #header__menu-toggle {
@@ -137,4 +167,104 @@ h3 {
 #header__menu-toggle:checked ~ .header__menu {
   visibility: visible;
   left: 0;
+}
+
+@media (min-width: 1100px) {
+  .header__menu-btn {
+    display: none;
+  }
+  .header__burger-menu {
+    width: 100%;
+    height: auto;
+  }
+  .header__menu {
+    display: flex;
+    visibility: visible;
+    position: inherit;
+    background-color: transparent;
+    box-shadow: none;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .header__nav {
+    display: flex;
+  }
+}
+.main-section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.main-section__img-box {
+  width: auto;
+  position: relative;
+}
+.main-section__img-box::before {
+  content: "";
+  position: absolute;
+  display: block;
+  background-image: url(../img/vector1.png);
+  background-position: center;
+  background-size: cover;
+  width: 600px;
+  height: 680px;
+  left: -150px;
+  top: -70%;
+  z-index: -1;
+}
+.main-section__text-box {
+  text-align: center;
+}
+.main-section__heading {
+  text-transform: capitalize;
+  font-size: 24px;
+  font-weight: 700;
+}
+.main-section__heading_purple {
+  background: linear-gradient(to left, #8176af, #c0b7e8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 36px;
+}
+.main-section__btn {
+  display: block;
+  padding: 15px 20px;
+  width: 80%;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 700;
+  transition-duration: 0.25s;
+  margin: 30px auto 50px;
+}
+.main-section__contacts {
+  width: 100%;
+}
+.main-section__contacts-wrapper {
+  background: #3a3456;
+  background: radial-gradient(circle, #3a3456 15%, #211e2e 100%);
+  width: 100%;
+  border-radius: 90px;
+}
+.main-section__contact {
+  width: 100%;
+  padding: 20px 50px;
+  text-align: center;
+}
+.main-section__contact-location {
+  display: flex;
+  align-items: center;
+}
+.main-section__contact-phone {
+  display: none;
+}
+.main-section__contact-email {
+  display: none;
+}
+
+@media (max-width: 360px) {
+  .main-section__contact-location-img {
+    display: none;
+  }
 }/*# sourceMappingURL=style.css.map */
